@@ -1,0 +1,54 @@
+import java.util.Scanner;
+import java.util.Arrays;
+public class Main {
+
+    // Method to find the smallest letter greater than target
+    public static char nextGreatestLetter(char[] letters, char target) {
+
+        int left = 0;
+        int right = letters.length - 1;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+
+            if (letters[mid] <= target) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+
+        // Wrap-around case handled using modulo
+        return letters[left % letters.length];
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        // Input size
+        System.out.print("Enter number of letters: ");
+        int n = sc.nextInt();
+
+        char[] letters = new char[n];
+
+        // Input letters (must be sorted)
+        System.out.println("Enter the letters (space separated):");
+        for (int i = 0; i < n; i++) {
+            letters[i] = sc.next().charAt(0);
+        }
+
+        // Input target character
+        System.out.print("Enter target character: ");
+        char target = sc.next().charAt(0);
+
+        // Call function
+        Arrays.sort(letters);
+        char result = nextGreatestLetter(letters, target);
+
+        // Output
+        System.out.println("Smallest letter greater than target: " + result);
+
+        sc.close();
+    }
+}
