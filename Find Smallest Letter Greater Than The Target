@@ -52,3 +52,10 @@ public class Main {
         sc.close();
     }
 }
+/**
+Enter number of letters: 5
+Enter the letters (space separated):
+c f j m p
+Enter target character: j
+Smallest letter greater than target: m
+*/
