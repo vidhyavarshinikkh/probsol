@@ -28,3 +28,9 @@ public class Solution {
         System.out.println(Arrays.toString(result));
     }
 }
+/**
+Input:
+int[] nums = {1, 2, 1};
+
+Output:
+[1, 2, 1, 1, 2, 1]*/
